@@ -1,14 +1,32 @@
 # ClimaBR
+## Sobre o projeto
 
 Uma aplicação simples para consulta à previsão do tempo de cidades brasileiras.
 
-# Como usar?
+Desenvolvido para disciplina de Modelagem e Implementação de Software
+
+Os usuários encontrarão as seguintes funcionalidades:
+- Buscar por cidade
+- Ver histórico de busca
+- Limpar histórico de busca
+- Ver a previsão do tempo para cidade buscada
+  
+## Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [Ionic Framework](https://ionicframework.com/)
+- [Angular](https://angular.io/)
+
+## Como executar o projeto
 
 Clone este repositório.
 
 Entre na pasta do projeto e execute o comando abaixo para instalar as dependências:
 
-`npm install`
+```bash
+  npm install
+``` 
 
 Acesse o site https://openweathermap.org/api, faça seu cadastro e crie uma chave de API.
 
@@ -24,6 +42,8 @@ export const OPEN_WEATHER_CONFIG = {
 
 Para abrir a aplicação, execute o comando:
 
-`ionic serve`
+```bash
+  ionic serve
+``` 
 
 Enjoy!
