@@ -1,6 +1,6 @@
 <ion-header class="ion-no-border">
   <ion-toolbar color="primary">
-    <ion-title> Climabr </ion-title>
+    <ion-title> ClimaBR </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -20,6 +20,7 @@
         ></app-error-message>
         <ion-list lines="none" *ngIf="!hasError">
           <app-city-details
+            id="app-city-details"
             *ngFor="let city of cities"
             id="{{city.id}}"
             name="{{city.name}}"
@@ -29,5 +30,29 @@
         </ion-list>
       </ion-col>
     </ion-row>
+    <ion-row *ngIf="lastCities?.length > 0">
+      <ion-col size-sm="10" offset-sm="1" size-md="8" offset-md="2">
+
+
+      <ion-item-divider>
+        <ion-text color="dark">
+          <h5>Últimas consultas
+          <ion-badge color="danger" (click)="clearHistory()">Limpar</ion-badge>
+          </h5>
+        </ion-text>
+      </ion-item-divider>
+        <ion-list lines="none">
+
+          <app-city-details
+            id="app-city-details"
+            *ngFor="let info of lastCities"
+            id="{{info.weather.city.id}}"
+            name="{{info.weather.city.name}}"
+            state="{{info.weather.city.state}}"
+            (selectCity)="onSelectCity($event)"
+          ></app-city-details>
+        </ion-list>
+      </ion-col>
+      </ion-row>
   </ion-grid>
 </ion-content>
